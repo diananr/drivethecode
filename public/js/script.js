@@ -12,8 +12,8 @@ var good = function(pos){
 
     var latlon = new google.maps.LatLng(lat, lon);
     var mapa = document.getElementById("map");
-    mapa.style.height = "100%";
-    mapa.style.width = "100%";
+    mapa.style.height = "100vh";
+    mapa.style.width = "100vw";
 
   	var myOptions = {
 	    center:latlon,
