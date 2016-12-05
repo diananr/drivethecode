@@ -1,60 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/utilities.css">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/main.css" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-            <div class="container-fluid">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
             <!--MENU DESPLEGABLE-->
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12 col-xs-12">
-                        <nav class="navbar" role="navigation">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                                    <span class="sr-only">Display navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                                <a href="index.html"><img src="img/LYFT_LOGO/PNGs/2x/lyft_50px@2x.png" alt="lyft logo"></a>
-                            </div>
-                            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                                <ul class="nav navbar-nav navbar-right">
-                                    <li class="font-italic "><a href="#" class="white"><i>Drive</i></a></li>
-                                    <li class="font-italic "><a href="#" class="white"><i>Explore</i></a></li>
-                                    <li class="font-italic "><a href="#" class="white"><i>Help</i></a></li>
-                                    <li class="font-italic "><a href="#" class="white"><i>Log in</i></a></li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>		
-        </header>
-        <section>
-            <div class="header-txt">
-               <h1>ESTIMATE FARE</h1>
-                <div class="rate-form">
-                    <input type="text" placeholder="Add Pickup Location">
-                    <input type="text" placeholder="Add Destionation">
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-xs-12">
+                    <nav class="navbar" role="navigation">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                                <span class="sr-only">Display navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a href="index.html"><img src="img/LYFT_LOGO/PNGs/2x/lyft_50px@2x.png" alt="lyft logo"></a>
+                        </div>
+                        <div class="collapse navbar-collapse navbar-ex1-collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="font-italic "><a href="#" class="white"><i>Drive</i></a></li>
+                                <li class="font-italic "><a href="#" class="white"><i>Explore</i></a></li>
+                                <li class="font-italic "><a href="#" class="white"><i>Help</i></a></li>
+                                <li class="font-italic "><a href="#" class="white"><i>Log in</i></a></li>
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
             </div>
-            <a href="#" class="btn btn-default btn-lyft">Get Estimate</a>
-            <div id="map"></div>
-        </section>
-        <!--JS/JQUERY-->
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <!--GOOGLE MAPS -->
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3f_itecFhNIkNeSsWovplQm_0bY5b6LI" async defer></script>
-        <!--BOOTSTRAP JAVASCRIPT -->
-        <script src="js/bootstrap.min.js"></script>
-        <!--MAIN-->
-        <script type="text/javascript" src="js/script.js"></script> 
-    </body>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="header-txt">
+                        <h1>ESTIMATE FARE</h1>
+                        <div class="rate-form">
+                            <input type="text" placeholder="Add Pickup Location">
+                            <input type="text" placeholder="Add Destionation">
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-default btn-lyft">Get Estimate</a>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <section>
+        <div id="map"></div>
+    </section>
+    <!--JS/JQUERY-->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <!--GOOGLE MAPS -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3f_itecFhNIkNeSsWovplQm_0bY5b6LI" async defer></script>
+    <!--BOOTSTRAP JAVASCRIPT -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--MAIN-->
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
 </html>
