@@ -34,29 +34,50 @@ var error = function(error){
 	console.log(error);
 }
 
-//get address
 var pickupLocation = function(){
-	var addPickup = $("#startPoint").val();
-	var destination = $("#endPoint").val();
-
-	var geocoder = new google.maps.Geocoder();
-
-	geocoder.geocode({"address": addPickup}, geocodeResult);
-	// geocoder.geocoder({"address": destination}, geocodeResult);
+	var directionsDisplay = new google.maps.DirectionsRenderer();
+	var directionsService = new google.maps.DirectionsService();
 }
 
-var geocodeResult = function(result, status){
-	if (status){
-		var opMap = {
-			center: resultado[0].geometry.location,
-			mapTypeId: google.maps.MapTypeId.ROADMAP,
-		};
+var request = {
+	origin: $('#startPoint').val(),
+	destination: $('#endPoint').val(),
+	provideRouteAlternatives: true
+};
 
-		var map = new google.maps.Map(document.getElementById("map"), opMap);
-		map.fitBounds(resultado[0].geometry.viewport);
+directionsService.route(request, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+        directionsDisplay.setMap(map);
+        directionsDisplay.setPanel($("#ruta").get(0));
+        directionsDisplay.setDirections(response);
+    } else {
+        alert("No existen rutas entre ambos puntos");
+    }
+});
 
-		var markerOptions = { position: resultado[0].geometry.location }
-        var marker = new google.maps.Marker(markerOptions);
-        marker.setMap(map);
-	}
-}
+
+
+//get address
+// var pickupLocation = function(){
+// 	var addPickup = $("#startPoint").val();
+// 	//var destination = $("#endPoint").val();
+
+// 	var geocoder = new google.maps.Geocoder();
+
+// 	geocoder.geocode({"address": addPickup}, geocodeResult);
+// }
+
+// var geocodeResult = function(result, status){
+// 	if (status){
+// 		var opMap = {
+// 			center: result[0].geometry.location,
+// 			mapTypeId: google.maps.MapTypeId.ROADMAP,
+// 		};
+
+// 		var map = new google.maps.Map(document.getElementById("map"), opMap);
+// 		map.fitBounds(result[0].geometry.viewport);
+
+// 		var markerOptions = { position: result[0].geometry.location }
+//         var marker = new google.maps.Marker(markerOptions);
+//         marker.setMap(map);
+// 	}
