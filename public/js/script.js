@@ -2,6 +2,7 @@ var loadPag = function () {
 	if (navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(good, error);
 	}
+	$("#estimate").click(pickupLocation);
 }
 
 $(document).ready(loadPag);
@@ -41,7 +42,7 @@ var pickupLocation = function(){
 	var geocoder = new google.maps.Geocoder();
 
 	geocoder.geocode({"address": addPickup}, geocodeResult);
-	geocoder.geocoder({"address": destination}, geocodeResult);
+	// geocoder.geocoder({"address": destination}, geocodeResult);
 }
 
 var geocodeResult = function(result, status){
