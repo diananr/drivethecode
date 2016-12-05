@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "mkdir -p public/css && stylus src/stylus/main.styl -o public/css/main.css",
     "start": "node server.js"
   },
   "repository": {
