@@ -1,115 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8">
-        <title></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/utilities.css">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/main.css" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-            <div class="container-fluid">
-                <!--MENU DESPLEGABLE-->
-                <div class="row">
-                    <div class="col-lg-12 col-sm-12 col-xs-12">
-                        <nav class="navbar" role="navigation">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-one-collapse">
-                                    <span class="sr-only">Display navigation</span>
-                                    <span class="icon-bar black"></span>
-                                    <span class="icon-bar black"></span>
-                                    <span class="icon-bar black"></span>
-                                </button>
-                                <a href="index.html" class="logo"><img src="img/LYFT_LOGO/PNGs/2x/lyft_44px@2x.png" alt="lyft" class="logo"></a>
-                            </div>
-                            <div class="collapse navbar-collapse navbar-one-collapse">
-                                <ul class="nav navbar-nav">
-                                    <li class="font-italic "><a href="#" class="black">Cities</a></li>
-                                    <li class="font-italic "><a href="#" class="black">Help</a></li>
-                                    <li class="dropdown">
-                                        <a class="dropdown-toggle black" data-toggle="dropdown" href="#">Explore
-                                        <span class="caret black"></span></a>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Partnerships</a></li>
-                                            <li><a href="#">Enterprise</a></li>
-                                            <li><a href="#">Ambassadors</a></li>
-                                            <li><a href="#">Cities</a></li>
-                                            <li><a href="#">Airports</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                                <ul class="nav navbar-nav pull-right">
-                                    <li class="font-italic "><a href="#" class="driveWith drive black">Drive with Lyft</a></li>
-                                    <li class="font-italic "><a href="#" class="black">Log in</a></li>
-                                    <li class="font-italic "><a href="#" class="textPink pull-right"><b>Sign Up</b></a></li>
-                                </ul>
-                            </div>
-                        </nav>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <!--MENU DESPLEGABLE-->
+            <div class="row">
+                <div class="col-lg-12 col-sm-12 col-xs-12">
+                    <nav class="navbar" role="navigation">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                                <span class="sr-only">Display navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a href="index.html"><img src="img/LYFT_LOGO/PNGs/2x/lyft_50px@2x.png" alt="lyft logo"></a>
+                        </div>
+                        <div class="collapse navbar-collapse navbar-ex1-collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li class="font-italic "><a href="#" class="white"><i>Drive</i></a></li>
+                                <li class="font-italic "><a href="#" class="white"><i>Explore</i></a></li>
+                                <li class="font-italic "><a href="#" class="white"><i>Help</i></a></li>
+                                <li class="font-italic "><a href="#" class="white"><i>Log in</i></a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="header-txt">
+                    <h1>ESTIMATE FARE</h1>
+                    <div class="rate-form">
+                        <input type="text" placeholder="Add Pickup Location" id="startPoint">
+                        <input type="text" placeholder="Add Destionation" id="endPoint">
                     </div>
                 </div>
-            </div>		
-        </header>
-        <section>
-            <div class="header-txt">
-               <h1>ESTIMATE FARE</h1>
-               <p>¿Cuál es el costo de viajes Uber en tu ciudad? Calcula una tarifa para tu próximo viaje. Simplemente ingresa un punto de partida y un destino para comenzar.</p>
+                <a href="#" class="btn btn-default btn-lyft">Get Estimate</a>
             </div>
-            <div class="rate-form">
-                <input type="text" placeholder="Add Pickup Location" id="startPoint">
-                <input type="text" placeholder="Add Destionation" id="endPoint">
-            </div>
-            <a class="btn btn-default btn-lyft" id="estimate">Get Estimate</a>
-            <div id="map"></div>
-            <div id="route"></div>
-        </section>
-        <footer>
-           <div class="container-fluid">
-               <div class="row">
-                    <!--company-->
-                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                        <ul>
-                           Company
-                           <li><a href="">Press</a></li>
-                           <li><a href="">Blog</a></li>
-                           <li><a href="">Careers</a></li>
-                        </ul>
-                    </div>
-                    <!--Ride-->
-                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                        <ul>
-                           Ride
-                           <li><a href="">Drive</a></li>
-                           <li><a href="">Cities</a></li>
-                           <li><a href="">Help</a></li>
-                           <li><a href="">Safety</a></li>
-                           <li><a href="">Log In</a></li>
-                        </ul>
-                    </div>
-                    <!--Explore-->
-                    <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
-                        <ul>
-                           Explore
-                           <li><a href="">Enterprise</a></li>
-                           <li><a href="">Partnerships</a></li>
-                           <li><a href="">Lyft For Good</a></li>
-                           <li><a href="">Ambassadors</a></li>
-                           <li><a href="">Developers</a></li>
-                           <li><a href="">Lyft Promo Code</a></li>
-                        </ul>
-                    </div>
-               </div>
-           </div>
-        </footer>
-        <!--JS/JQUERY-->
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <!--GOOGLE MAPS -->
-        <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyA3f_itecFhNIkNeSsWovplQm_0bY5b6LI"></script>
-        <!--BOOTSTRAP JAVASCRIPT -->
-        <script src="js/bootstrap.min.js"></script>
-        <!--MAIN-->
-        <script type="text/javascript" src="js/script.js"></script> 
-    </body>
-<<<<<<< HEAD
+        </div>
+    </div>
+    <section>
+        <div id="map"></div>
+        <div id="route"></div>
+    </section>
+    <!--JS/JQUERY-->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <!--GOOGLE MAPS -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3f_itecFhNIkNeSsWovplQm_0bY5b6LI" async defer></script>
+    <!--BOOTSTRAP JAVASCRIPT -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--MAIN-->
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
 </html>
