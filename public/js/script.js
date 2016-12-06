@@ -1,9 +1,34 @@
+var clientId = 'ydgWzNZ4qVrS';
+var clientSecret = '04gYKvHBfWi_HS7uuiERZqBiH9V_YWBd';
+
+var lati= localStorage.getItem("latitud");
+var lati1= localStorage.getItem("latitud1");
+var longi= localStorage.getItem("longitud");
+var longi1= localStorage.getItem("longitud1");
+
 var loadPag = function () {
 	if (navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(good, error);
 	}
 	$("#estimate").click(showRoute);
 
+	$.ajax({
+		url: 'https://api.lyft.com/oauth/token',
+		type: 'POST',
+		data: {
+			grant_type: 'client_credentials',
+			scope: 'public'
+		},
+		beforeSend: function (xhr) {
+			xhr.setRequestHeader ("Authorization", "Basic " + btoa(clientId + ":" + clientSecret));
+		},
+		success: function(response) {
+			console.log(response);
+		},
+		error: function(error) {
+			console.log(error);
+		}
+	});
 	autocomplete();
 }
 
@@ -58,6 +83,8 @@ var showRoute = function(){
 		travelMode: google.maps.TravelMode.DRIVING
 	};
 
+	var geocoder = new google.maps.Geocoder();
+
     //supresss initial a to b marker
     directionsDisplay.setMap(map);
     directionsDisplay.setOptions( { suppressMarkers: true } );
@@ -106,6 +133,20 @@ var showRoute = function(){
 			directionsDisplay.setDirections(result);
   		}
 	});
+
+	geocodeAddress(geocoder, "startPoint", "latitud", "longitud");
+	geocodeAddress(geocoder, "endPoint",  "latitud1", "longitud1");
+
+	$.ajax({
+	    url: 'https://api.lyft.com/v1/cost?ride_type=lyft&start_lat='+lati+'&start_lng='+longi+'&end_lat='+lati1+'&end_lng='+longi1,
+	    type: 'GET',
+	    beforeSend: function(xhr) {
+             xhr.setRequestHeader("Authorization", "Bearer "+"gAAAAABXvLCVr6uY651QmKu_Pj2_trgqXSPe9AVJ9lldCe3vPjzUDBHXG19FXDZoWZ7_G3U_u01K4fuw3Lj7W6ml30v7jiuH4rlEfaxdqS9UiLhn2eiTkhezLF8Y66I3cpuF4b7UhXlS25Y5xbmPb6Qz5m9dllLJQBH11bxMe4o-Qh5mtAaEUVw=");
+        },
+	    success: function(response){
+	    	console.log(response);
+	    }
+	})
 }
 
 //show the predict
@@ -125,3 +166,11 @@ var autocomplete = function() {
 	var autocomplete_destination = new google.maps.places.Autocomplete(destination_input, options);
 }
 
+
+var geocodeAddress= function(geocoder, valor, lat,lon) {
+  var address = document.getElementById(valor).value;
+  geocoder.geocode({'address': address}, function(results, status) {
+  	localStorage.setItem(lat, results[0].geometry.location.lat());
+  	localStorage.setItem(lon, results[0].geometry.location.lng());
+  });
+}
