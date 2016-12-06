@@ -9,3 +9,12 @@ $("#startPoint").on('click', function(){
 $("endPoint").on('click', function(){
     $(".cars").hide("slow");
 })
+$("#line").click(function(){
+    $("#myModal-line").modal();
+});
+$("#lyft").click(function(){
+    $("#myModal-lyft").modal();
+});
+$("#plus").click(function(){
+    $("#myModal-plus").modal();
+});
