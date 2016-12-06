@@ -3,7 +3,7 @@ var clientSecret = '04gYKvHBfWi_HS7uuiERZqBiH9V_YWBd';
 
 var start_lat= localStorage.getItem("latitud");
 var start_lng= localStorage.getItem("longitud");
-var end_lat= localStorage.getItem("latitud");
+var end_lat= localStorage.getItem("latitud1");
 var end_lng= localStorage.getItem("longitud1");
 var access_token = null;
 
@@ -146,6 +146,7 @@ var showRoute = function(){
 		    	start_lng : start_lng,
 		    	end_lat : end_lat,
 		    	end_lng : end_lng
+		    	//'https://api.lyft.com/v1/cost?start_lat=37.7772&start_lng=-122.4233&end_lat=37.7972&end_lng=-122.4533'
 		    },
 			beforeSend: function(xhr) {
 				xhr.setRequestHeader("Authorization", "bearer " + access_token);
@@ -178,41 +179,6 @@ var autocomplete = function() {
 }
 
 
-<<<<<<< HEAD
-=======
-
-var addressValidator = require('address-validator');
-var Address = addressValidator.Address;
-var _ = require('underscore');
-
-//any of the props in this object are optional, also spelling does not have to be exact.
-var address = new Address({
-    street: '100 North Washington St',
-    city: 'Bostont',
-    state: 'Mass',
-    country: 'US'
-});
-
-//the passed in address does not need to be an address object it can be a string. (address objects will give you a better likelihood of finding an exact match)
-address = '100 North Washington St, Boston, MA, US';
-
-//`addressValidator.match.streetAddress` -> tells the validator that you think the input should be a street address. This data makes the validator more accurate. 
-// But, sometimes you dont know.. in that cause you should use `addressValidator.match.unknown`
-addressValidator.validate(address, addressValidator.match.streetAddress, function(err, exact, inexact){
-    console.log('input: ', address.toString())
-    console.log('match: ', _.map(exact, function(a) {
-      return a.toString();
-    }));
-    console.log('did you mean: ', _.map(inexact, function(a) {
-      return a.toString();
-    }));
-
-    //access some props on the exact match
-    var first = exact[0];
-    console.log(first.streetNumber + ' '+ first.street);
-});
-
->>>>>>> 1a7f7c7c14235d5261a853ff11ac50e77097c6d0
 var geocodeAddress= function(geocoder, valor, lat,lon) {
   var address = document.getElementById(valor).value;
   geocoder.geocode({'address': address}, function(results, status) {
@@ -222,7 +188,3 @@ var geocodeAddress= function(geocoder, valor, lat,lon) {
   	localStorage.setItem(lon, results[0].geometry.location.lng().toFixed(4));
   });
 }
-<<<<<<< HEAD
-=======
-
->>>>>>> 1a7f7c7c14235d5261a853ff11ac50e77097c6d0
