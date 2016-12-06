@@ -25,6 +25,7 @@
   "homepage": "https://github.com/AmySeo12/drivethecode#readme",
   "dependencies": {
     "express": "^4.14.0",
+    "lyft-api": "github:mnemonicflow/lyft-js",
     "stylus": "^0.54.5"
   },
   "devDependencies": {
