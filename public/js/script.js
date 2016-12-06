@@ -7,88 +7,6 @@ var end_lat= parseFloat(localStorage.getItem("latitud1"));
 var end_lng= parseFloat(localStorage.getItem("longitud1"));
 var access_token = null;
 
-var good= function(){
-		var mapa= document.getElementById('map');
-		mapa.style.height= "100vh";
-		mapa.style.width= "100vw";
-
-	  var map = new google.maps.Map(mapa, {
-	    center: {lat: -33.8688, lng: 151.2195},
-	    zoom: 13
-	  });
-	  var geocoder = new google.maps.Geocoder();
-
-	  var image1= "img/origin.png"
-	  var image2= "img/destination.png"
-	  var input = /** @type {!HTMLInputElement} */(document.getElementById('startPoint'));
-	  var inputDos=  document.getElementById("endPoint");
-
-	  var autocomplete = new google.maps.places.Autocomplete(input);
-
-	  autocomplete.bindTo('bounds', map);
-
-	  var marker = new google.maps.Marker({
-	    map: map,
-	    anchorPoint: new google.maps.Point(0, -29)
-	  });
-
-	  autocomplete.addListener('place_changed', function() {
-	    marker.setVisible(false);
-	    var place = autocomplete.getPlace();
-	    if (!place.geometry) {
-	      window.alert("Autocomplete's returned place contains no geometry");
-	      return;
-	    }
-	    // If the place has a geometry, then present it on a map.
-	    if (place.geometry.viewport) {
-	      map.fitBounds(place.geometry.viewport);
-	    } else {
-	      map.setCenter(place.geometry.location);
-	      map.setZoom(17);  // Why 17? Because it looks good.
-	    }
-	    marker.setIcon(/** @type {google.maps.Icon} */({
-	      url: image1,
-	    }));
-
-	    marker.setPosition(place.geometry.location);
-	    marker.setVisible(true);
-	    var address = '';
-	    geocodeAddress(geocoder, input, "latitud", "longitud");
-	  });
-
-	  var autocompleteDos = new google.maps.places.Autocomplete(inputDos);
-	  autocompleteDos.bindTo('bounds', map);
-
-	  var markerDos = new google.maps.Marker({
-	    map: map,
-	    anchorPoint: new google.maps.Point(0, -29)
-	  });
-	  autocompleteDos.addListener('place_changed', function() {
-	    markerDos.setVisible(false);
-	    var place = autocompleteDos.getPlace();
-
-	    if (!place.geometry) {
-	      window.alert("Autocomplete's returned place contains no geometry");
-	      return;
-	    }
-	    // If the place has a geometry, then present it on a map.
-	    if (place.geometry.viewport) {
-	      map.fitBounds(place.geometry.viewport);
-	    } else {
-	      map.setCenter(place.geometry.location);
-	      map.setZoom(14);  // Why 17? Because it looks good.
-	    }
-
-	    markerDos.setIcon(/** @type {google.maps.Icon} */({
-	      url: image2
-	      })
-	    );
-	    markerDos.setPosition(place.geometry.location);
-	    markerDos.setVisible(true)
-	    geocodeAddress(geocoder, inputDos, "latitud1", "longitud");
-	  });
-}
-
 var loadPag = function () {
 	if (navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(good);
@@ -119,6 +37,88 @@ var loadPag = function () {
 }
 
 $(document).ready(loadPag);
+
+var good= function(){
+	var mapa= document.getElementById('map');
+	mapa.style.height= "100vh";
+	mapa.style.width= "100vw";		
+
+	var map = new google.maps.Map(mapa, {
+		center: {lat: -33.8688, lng: 151.2195},
+		zoom: 13
+	});
+	var geocoder = new google.maps.Geocoder();
+
+	var image1= "img/origin.png"
+	var image2= "img/destination.png"
+	var input = /** @type {!HTMLInputElement} */(document.getElementById('startPoint'));
+	var inputDos=  document.getElementById("endPoint");
+
+	var autocomplete = new google.maps.places.Autocomplete(input);
+
+	autocomplete.bindTo('bounds', map);
+
+	var marker = new google.maps.Marker({
+		map: map,
+		anchorPoint: new google.maps.Point(0, -29)
+	});
+
+	autocomplete.addListener('place_changed', function() {
+		marker.setVisible(false);
+		var place = autocomplete.getPlace();
+		if (!place.geometry) {
+		  window.alert("Autocomplete's returned place contains no geometry");
+		  return;
+		}
+		// If the place has a geometry, then present it on a map.
+		if (place.geometry.viewport) {
+		  map.fitBounds(place.geometry.viewport);
+		} else {
+		  map.setCenter(place.geometry.location);
+		  map.setZoom(17);  // Why 17? Because it looks good.
+		}
+		marker.setIcon(/** @type {google.maps.Icon} */({
+		  url: image1,
+		}));
+
+		marker.setPosition(place.geometry.location);
+		marker.setVisible(true);
+		var address = '';
+		geocodeAddress(geocoder, input, "latitud", "longitud");
+	});
+
+	var autocompleteDos = new google.maps.places.Autocomplete(inputDos);
+	autocompleteDos.bindTo('bounds', map);
+
+	var markerDos = new google.maps.Marker({
+		map: map,
+		anchorPoint: new google.maps.Point(0, -29)
+	});
+	autocompleteDos.addListener('place_changed', function() {
+		markerDos.setVisible(false);
+		var place = autocompleteDos.getPlace();
+
+		if (!place.geometry) {
+		  window.alert("Autocomplete's returned place contains no geometry");
+		  return;
+		}
+		// If the place has a geometry, then present it on a map.
+		if (place.geometry.viewport) {
+		  map.fitBounds(place.geometry.viewport);
+		} else {
+		  map.setCenter(place.geometry.location);
+		  map.setZoom(14);  // Why 17? Because it looks good.
+		}
+
+		markerDos.setIcon(/** @type {google.maps.Icon} */({
+		  url: image2
+		  })
+		);
+		markerDos.setPosition(place.geometry.location);
+		markerDos.setVisible(true)
+		geocodeAddress(geocoder, inputDos, "latitud1", "longitud");
+	});
+}
 
 //show route
 var showRoute = function(){
