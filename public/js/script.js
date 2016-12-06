@@ -57,6 +57,13 @@ var good = function(pos){
     };
     
     var map = new google.maps.Map(document.getElementById("map"), myOptions);
+    
+    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png';
+      var marker = new google.maps.Marker({
+        position: loatlon,
+        map: map,
+        icon: iconBase 
+    });
 }
 var error = function(error){
 	console.log(error);
@@ -174,3 +181,4 @@ var geocodeAddress= function(geocoder, valor, lat,lon) {
   	localStorage.setItem(lon, results[0].geometry.location.lng());
   });
 }
+
