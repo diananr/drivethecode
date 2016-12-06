@@ -88,9 +88,7 @@ var showRoute = function(){
 			destination: $('#endPoint').val(),
 			travelMode: google.maps.TravelMode.DRIVING
 		};
-
-		var geocoder = new google.maps.Geocoder();
-
+		
 	    //supresss initial a to b marker
 	    directionsDisplay.setMap(map);
 	    directionsDisplay.setOptions( { suppressMarkers: true } );
