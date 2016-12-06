@@ -15,11 +15,13 @@
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-one-collapse">
                     <span class="sr-only">Display navigation</span>
-                    <i class="glyphicon glyphicon-menu-hamburger"></i>
+                    <img src="img/icon_hamburger.png" alt="">
                 </button>
-                <img src="img/LYFT_LOGO/PNGs/1x/lyft_50px.png" alt="">
+                <img src="img/LYFT_LOGO/PNGs/1x/lyft_50px.png" alt="" class="hidden-sm logoResponsive" >
+                <a href="" class="textPink hidden-sm signResponsive"><b>Sign Up</b></a>
             </div>
             <div class="collapse navbar-collapse navbar-one-collapse">
+                <img src="img/LYFT_LOGO/PNGs/1x/lyft_50px.png" alt="" class="logoIndex">
                 <ul class="nav navbar-nav">
                     <li><a href="#" class="black">Cities</a></li>
                     <li><a href="#" class="black">Help</a></li>
@@ -34,13 +36,12 @@
                             <li><a href="#">Airports</a></li>
                         </ul>
                     </li>
-                  </ul>
-                  <ul class="nav navbar-nav navbar-right">
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
                     <li><a href="#" class="black driveWith">Drive with Lyft</a></li>
                     <li><a href="#" class="black">Log In</a></li>
                     <li><a href="#" class="textPink"><b>Sign Up</b></a></li>
-                  </ul>
-                </div>
+                </ul>
             </div>
         </nav>
     </header>
@@ -52,11 +53,11 @@
                        <h1>ESTIMATE FARE</h1>
                        <div class="rate-form">
                            <div class="input-conector"></div>
-                           <input type="text" placeholder="Add Pickup Location" id="startPoint">
+                           <input type="textbox" placeholder="Add Pickup Location" id="startPoint">
                            <input type="text" placeholder="Add Destination" id="endPoint">
                        </div>
                    </div>
-                   <a class="btn btn-default btn-lyft" id="estimate">Get Estimate</a>
+                   <a class="btn btn-default btn-lyft" id="estimate" type="button" value="Geocode">Get Estimate</a>
                </div>
            </div>
         </div>
@@ -132,7 +133,7 @@
                            </div>
                         </div>
                     </div>
-                    <a class="btn btn-default btn-lyft" id="estimate">Sign up and ride</a>
+                    <a class="btn btn-default btn-lyft" id="estimate" href="https://www.lyft.com/signup">Sign up and ride</a>
                 </div>
             </div>
         </div>
