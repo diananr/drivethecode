@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
     <title></title>
@@ -8,6 +9,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
 </head>
+
 <body>
     <header>
         <!--MENU DESPLEGABLE-->
@@ -34,13 +36,12 @@
                             <li><a href="#">Airports</a></li>
                         </ul>
                     </li>
-                  </ul>
-                  <ul class="nav navbar-nav navbar-right">
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
                     <li><a href="#" class="black driveWith">Drive with Lyft</a></li>
                     <li><a href="#" class="black">Log In</a></li>
                     <li><a href="#" class="textPink"><b>Sign Up</b></a></li>
-                  </ul>
-                </div>
+                </ul>
             </div>
         </nav>
     </header>
@@ -48,17 +49,17 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="rate-container">
-                   <div class="header-txt">
-                       <h1>ESTIMATE FARE</h1>
-                       <div class="rate-form">
-                           <div class="input-conector"></div>
-                           <input type="text" placeholder="Add Pickup Location" id="startPoint">
-                           <input type="text" placeholder="Add Destination" id="endPoint">
-                       </div>
-                   </div>
-                   <a class="btn btn-default btn-lyft" id="estimate">Get Estimate</a>
-               </div>
-           </div>
+                    <div class="header-txt">
+                        <h1>ESTIMATE FARE</h1>
+                        <div class="rate-form">
+                            <div class="input-conector"></div>
+                            <input type="text" placeholder="Add Pickup Location" id="startPoint">
+                            <input type="text" placeholder="Add Destination" id="endPoint">
+                        </div>
+                    </div>
+                    <a class="btn btn-default btn-lyft" id="estimate">Get Estimate</a>
+                </div>
+            </div>
         </div>
         <div class="row">
             <div class="col-md-4">
@@ -66,54 +67,54 @@
                     <div class="header-txt">
                         <h1 class="no-line">AVAILABLE RIDE TYPES</h1>
                         <div class="rate-form">
-                           <div class="row">
-                               <div class="car-item" data-toggle="modal" data-target=".bs-example-modal-sm">
-                                   <div class="col-md-4">
-                                       <img src="img/line-car.png" alt="">
-                                   </div>
-                                   <div class="col-md-4">
-                                       <p class="first-txt">Line</p>
-                                       <p class="detail">Shared, 2 riders max</p>
-                                   </div>
-                                   <div class="col-md-4">
-                                       <p class="rate">
-                                          $<span id="lyftLine"></span>
-                                       </p>
-                                   </div>
-                               </div>
-                           </div>
-                           <div class="row">
-                               <div class="car-item" data-toggle="modal" data-target=".bs-example-modal-sm">
-                                  <div class="col-md-4">
-                                      <img src="img/lyft-car.png" alt="">
-                                  </div>
-                                  <div class="col-md-4">
-                                      <p class="first-txt">Lyft</p>
-                                      <p class="detail">4 seats</p>
-                                  </div>
-                                  <div class="col-md-4">
-                                      <p class="rate">
-                                          $<span id="lyft"></span>
-                                      </p>
-                                  </div>
-                               </div> 
-                           </div>
-                           <div class="row">
-                               <div class="car-item" data-toggle="modal" data-target=".bs-example-modal-sm">
-                                  <div class="col-md-4">
-                                      <img src="img/plus-car.png" alt="">
-                                  </div>
-                                  <div class="col-md-4">
-                                      <p class="first-txt">Plus</p>
-                                      <p class="detail">6 seats</p>
-                                  </div>
-                                  <div class="col-md-4">
-                                      <p class="rate">
-                                          $ <span id="lyftPlus"></span>
-                                      </p>
-                                  </div>
-                               </div>
-                           </div>
+                            <div class="row">
+                                <div class="car-item" data-toggle="modal" data-target=".bs-example-modal-sm" id="line">
+                                    <div class="col-md-4">
+                                        <img src="img/line-car.png" alt="">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p class="first-txt">Line</p>
+                                        <p class="detail">Shared, 2 riders max</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p class="rate">
+                                            $<span id="lyftLine"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="car-item" data-toggle="modal" data-target=".bs-example-modal-sm" id="lyft">
+                                    <div class="col-md-4">
+                                        <img src="img/lyft-car.png" alt="">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p class="first-txt">Lyft</p>
+                                        <p class="detail">4 seats</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p class="rate">
+                                            $<span id="lyft"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="car-item" data-toggle="modal" data-target=".bs-example-modal-sm" id="plus">
+                                    <div class="col-md-4">
+                                        <img src="img/plus-car.png" alt="">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p class="first-txt">Plus</p>
+                                        <p class="detail">6 seats</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p class="rate">
+                                            $ <span id="lyftPlus"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <a class="btn btn-default btn-lyft" id="estimate">Sign up and ride</a>
@@ -121,15 +122,70 @@
             </div>
         </div>
     </div>
-    
-    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-  <div class="modal-dialog modal-sm" role="document">
-    <div class="modal-content">
-      ...
-    </div>
-  </div>
-</div>
+    <div class="container">
+        <!-- Modal line -->
+        <div class="modal fade" id="myModal-line" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div>
+                        <div class="hot-pink">
+                            <p>A personal for when you need to get to your destination fast. Fits up to 4 people.</p>
+                        </div>
+                        <div class="light">
+                            <p>Seats</p>
+                            <p>Minimun fare</p>
+                            <p>Pickup</p>
+                            <p>Per mile</p>
+                            <p>Per minute</p>
+                        </div>
+                        <p>$1.75 Service fee added to all rides</p>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- Modal lyft -->
+        <div class="modal fade" id="myModal-lyft" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div>
+                        <div class="hot-pink">
+                            <p>A personal for when you need to get to your destination fast. Fits up to 4 people.</p>
+                        </div>
+                        <div class="light">
+                            <p>Seats</p>
+                            <p>Minimun fare</p>
+                            <p>Pickup</p>
+                            <p>Per mile</p>
+                            <p>Per minute</p>
+                        </div>
+                        <p>$1.75 Service fee added to all rides</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal plus -->
+        <div class="modal fade" id="myModal-plus" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
 
+            </div>
+        </div>
+    </div>
     <section>
         <div id="map"></div>
         <div id="route"></div>
@@ -139,10 +195,11 @@
     <!--BOOTSTRAP JAVASCRIPT -->
     <script src="js/bootstrap.min.js"></script>
     <!--MAIN-->
-    <script type="text/javascript" src="js/script.js"></script> 
+    <script type="text/javascript" src="js/script.js"></script>
     <!-- test .js -->
     <script src="js/script-2.js"></script>
     <!--GOOGLE MAPS -->
     <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyA3f_itecFhNIkNeSsWovplQm_0bY5b6LI&libraries=places"></script>
 </body>
+
 </html>
