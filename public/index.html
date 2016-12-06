@@ -38,24 +38,24 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="header-txt">
-                        <h1>ESTIMATE FARE</h1>
-                        <div class="rate-form">
-                            <input type="text" placeholder="Add Pickup Location">
-                            <input type="text" placeholder="Add Destionation">
-                        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="header-txt">
+                    <h1>ESTIMATE FARE</h1>
+                    <div class="rate-form">
+                        <input type="text" placeholder="Add Pickup Location" id="startPoint">
+                        <input type="text" placeholder="Add Destionation" id="endPoint">
                     </div>
-                    <a href="#" class="btn btn-default btn-lyft">Get Estimate</a>
                 </div>
+                <a href="#" class="btn btn-default btn-lyft">Get Estimate</a>
             </div>
         </div>
-
-    </header>
+    </div>
     <section>
         <div id="map"></div>
+        <div id="route"></div>
     </section>
     <!--JS/JQUERY-->
     <script type="text/javascript" src="js/jquery.js"></script>
@@ -66,5 +66,4 @@
     <!--MAIN-->
     <script type="text/javascript" src="js/script.js"></script>
 </body>
-
 </html>
