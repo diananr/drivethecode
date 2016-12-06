@@ -174,7 +174,6 @@ var autocomplete = function() {
 }
 
 
-<<<<<<< HEAD
 
 var addressValidator = require('address-validator');
 var Address = addressValidator.Address;
@@ -206,7 +205,7 @@ addressValidator.validate(address, addressValidator.match.streetAddress, functio
     var first = exact[0];
     console.log(first.streetNumber + ' '+ first.street);
 });
-=======
+
 var geocodeAddress= function(geocoder, valor, lat,lon) {
   var address = document.getElementById(valor).value;
   geocoder.geocode({'address': address}, function(results, status) {
@@ -214,4 +213,4 @@ var geocodeAddress= function(geocoder, valor, lat,lon) {
   	localStorage.setItem(lon, results[0].geometry.location.lng());
   });
 }
->>>>>>> 9efb9ec6544b6d4aa98fe37cda6ac7bbd677ae17
+
