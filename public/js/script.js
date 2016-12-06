@@ -13,6 +13,23 @@ var loadPag = function () {
 	$("#estimate").click(showRoute);
 
 	initialize();
+	$.ajax({
+		url: 'https://api.lyft.com/oauth/token',
+		type: 'POST',
+		data: {
+			grant_type: 'client_credentials',
+			scope: 'public'
+		},
+		beforeSend: function (xhr) {
+			xhr.setRequestHeader ("Authorization", "Basic " + btoa(clientId + ":" + clientSecret));
+		},
+		success: function(response) {
+			console.log(response);
+		},
+		error: function(error) {
+			console.log(error);
+		}
+	});
 }
 
 $(document).ready(loadPag);
@@ -80,7 +97,7 @@ var showRoute = function(){
 	    url: 'https://api.lyft.com/v1/cost?ride_type=lyft&start_lat='+lati+'&start_lng='+longi+'&end_lat='+lati1+'&end_lng='+longi1,
 	    type: 'GET',
 	    beforeSend: function(xhr) {
-             xhr.setRequestHeader("Authorization", "Bearer "+clientId);
+             xhr.setRequestHeader("Authorization", "Bearer "+"gAAAAABXvLCVr6uY651QmKu_Pj2_trgqXSPe9AVJ9lldCe3vPjzUDBHXG19FXDZoWZ7_G3U_u01K4fuw3Lj7W6ml30v7jiuH4rlEfaxdqS9UiLhn2eiTkhezLF8Y66I3cpuF4b7UhXlS25Y5xbmPb6Qz5m9dllLJQBH11bxMe4o-Qh5mtAaEUVw=");
         },
 	    success: function(response){
 	    	console.log(response);
