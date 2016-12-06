@@ -1,10 +1,10 @@
 var clientId = 'ydgWzNZ4qVrS';
 var clientSecret = '04gYKvHBfWi_HS7uuiERZqBiH9V_YWBd';
 
-var start_lat= localStorage.getItem("latitud");
-var start_lng= localStorage.getItem("longitud");
-var end_lat= localStorage.getItem("latitud1");
-var end_lng= localStorage.getItem("longitud1");
+var start_lat= parseFloat(localStorage.getItem("latitud"));
+var start_lng= parseFloat(localStorage.getItem("longitud"));
+var end_lat= parseFloat(localStorage.getItem("latitud1"));
+var end_lng= parseFloat(localStorage.getItem("longitud1"));
 var access_token = null;
 
 var loadPag = function () {
@@ -157,7 +157,7 @@ var showRoute = function(){
 		    error: function(error){
 		    	console.log(error);
 		    }
-		})
+		});
 	}
 }
 
@@ -182,8 +182,6 @@ var autocomplete = function() {
 var geocodeAddress= function(geocoder, valor, lat,lon) {
   var address = document.getElementById(valor).value;
   geocoder.geocode({'address': address}, function(results, status) {
-  	console.log(parseFloat(results[0].geometry.location.lat().toFixed(4)));
-  	console.log(parseFloat(results[0].geometry.location.lng().toFixed(4)));
   	localStorage.setItem(lat, results[0].geometry.location.lat().toFixed(4));
   	localStorage.setItem(lon, results[0].geometry.location.lng().toFixed(4));
   });
