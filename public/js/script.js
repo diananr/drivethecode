@@ -3,7 +3,29 @@ var loadPag = function () {
 		navigator.geolocation.getCurrentPosition(good, error);
 	}
 	$("#estimate").click(showRoute);
+
+	var clientId = 'ydgWzNZ4qVrS';
+	var clientSecret = '04gYKvHBfWi_HS7uuiERZqBiH9V_YWBd';
+
+	$.ajax({
+	  url: 'https://api.lyft.com/oauth/token',
+	  type: 'POST',
+	  data: {
+	    grant_type: 'client_credentials',
+	    scope: 'public'
+	  },
+	  beforeSend: function (xhr) {
+	    xhr.setRequestHeader ("Authorization", "Basic " + btoa(clientId+":"+clientSecret));
+	  },
+	  success: function(response) {
+	    console.log(response);
+	  },
+	  error: function(error) {
+	    console.log(error);
+	  }
+	});
 }
+
 
 $(document).ready(loadPag);
 
@@ -39,6 +61,8 @@ var showRoute = function(){
 	var directionsDisplay = new google.maps.DirectionsRenderer();
 	var directionsService = new google.maps.DirectionsService();
 
+	var geocoder = new google.maps.Geocoder();
+
 	var mapOptions = {
 		zoom: 5,
 		center: new google.maps.LatLng(40.674389,-4.700432),
@@ -61,4 +85,15 @@ var showRoute = function(){
 			directionsDisplay.setDirections(result);
   		}
 	});
+
+	geocodeAddress(geocoder, resultsMap, "startPoint");
+	geocodeAddress(geocoder, resultsMap, "endPoint");
+}
+
+var geocodeAddress= function(geocoder, resultsMap, valor) {
+  var address = document.getElementById(valor).value;
+  geocoder.geocode({'address': address}, function(results, status) {
+    console.log(results);
+    console.log(status);
+  });
 }

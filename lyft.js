@@ -2302,7 +2302,7 @@ Emitter.prototype.hasListeners = function(event){
   /**
    * Checks whether the given parameter value represents file-like content.
    * @param param The parameter to check.
-   * @returns {Boolean} <code>true</code> if <code>param</code> represents a file. 
+   * @returns {Boolean} <code>true</code> if <code>param</code> represents a file.
    */
   exports.prototype.isFileParam = function(param) {
     // fs.ReadStream in Node.js (but not in runtime like browserify)
@@ -2354,7 +2354,7 @@ Emitter.prototype.hasListeners = function(event){
 
   /**
    * Enumeration of collection format separator strategies.
-   * @enum {String} 
+   * @enum {String}
    * @readonly
    */
   exports.CollectionFormatEnum = {
@@ -2670,7 +2670,7 @@ Emitter.prototype.hasListeners = function(event){
    */
 
   /**
-   * Constructs a new PublicApi. 
+   * Constructs a new PublicApi.
    * @alias module:api/PublicApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use, default to {@link module:ApiClient#instance}
@@ -2937,7 +2937,7 @@ Emitter.prototype.hasListeners = function(event){
    */
 
   /**
-   * Constructs a new SandboxApi. 
+   * Constructs a new SandboxApi.
    * @alias module:api/SandboxApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use, default to {@link module:ApiClient#instance}
@@ -3090,7 +3090,7 @@ Emitter.prototype.hasListeners = function(event){
     /**
      * Driver availability for processing ride request
      * Set driver availability for the provided ride_type in the city/region surrounding the specified location\n
-     * @param {module:model/String} rideType 
+     * @param {module:model/String} rideType
      * @param {Object} opts Optional parameters
      * @param {module:model/SandboxDriverAvailability} opts.request Driver availability to be preset in the region surrounding the lat, lng
      * @param {module:api/SandboxApi~sandboxRidetypesRideTypePutCallback} callback The callback function, accepting three arguments: error, data, response
@@ -3156,7 +3156,7 @@ Emitter.prototype.hasListeners = function(event){
    */
 
   /**
-   * Constructs a new UserApi. 
+   * Constructs a new UserApi.
    * @alias module:api/UserApi
    * @class
    * @param {module:ApiClient} apiClient Optional API client implementation to use, default to {@link module:ApiClient#instance}
@@ -3231,7 +3231,7 @@ Emitter.prototype.hasListeners = function(event){
      * Cancel a ongoing ride which was requested earlier by providing the ride id.\n
      * @param {String} id The ID of the ride
      * @param {Object} opts Optional parameters
-     * @param {module:model/CancellationRequest} opts.request 
+     * @param {module:model/CancellationRequest} opts.request
      * @param {module:api/UserApi~ridesIdCancelPostCallback} callback The callback function, accepting three arguments: error, data, response
      */
     this.ridesIdCancelPost = function(id, opts, callback) {
@@ -3833,7 +3833,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/CancellationCost} The populated <code>CancellationCost</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
       Cost.constructFromObject(data, obj);
       if (data.hasOwnProperty('token')) {
@@ -3915,7 +3915,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/CancellationCostError} The populated <code>CancellationCostError</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
       CancellationCost.constructFromObject(data, obj);
       Error.constructFromObject(data, obj);
@@ -3993,7 +3993,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/CancellationRequest} The populated <code>CancellationRequest</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('cancel_confirmation_token')) {
@@ -4063,7 +4063,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/Charge} The populated <code>Charge</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('amount')) {
@@ -4151,7 +4151,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/Cost} The populated <code>Cost</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('amount')) {
@@ -4243,7 +4243,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/CostEstimate} The populated <code>CostEstimate</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('ride_type')) {
@@ -4386,7 +4386,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/DriverDetail} The populated <code>DriverDetail</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('first_name')) {
@@ -4481,7 +4481,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/Error} The populated <code>Error</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('error')) {
@@ -4564,7 +4564,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/ErrorDetail} The populated <code>ErrorDetail</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('field_name')) {
@@ -4632,7 +4632,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/Eta} The populated <code>Eta</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('ride_type')) {
@@ -4714,7 +4714,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/InlineResponse200} The populated <code>InlineResponse200</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('cost_estimates')) {
@@ -4778,7 +4778,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/InlineResponse2001} The populated <code>InlineResponse2001</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('nearby_drivers')) {
@@ -4842,7 +4842,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/InlineResponse2002} The populated <code>InlineResponse2002</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('eta_estimates')) {
@@ -4906,7 +4906,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/InlineResponse2003} The populated <code>InlineResponse2003</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('ride_history')) {
@@ -4970,7 +4970,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/InlineResponse2004} The populated <code>InlineResponse2004</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('ride_types')) {
@@ -5037,7 +5037,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/LatLng} The populated <code>LatLng</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('lat')) {
@@ -5116,7 +5116,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/LineItem} The populated <code>LineItem</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('type')) {
@@ -5202,7 +5202,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/Location} The populated <code>Location</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
       LatLng.constructFromObject(data, obj);
       if (data.hasOwnProperty('address')) {
@@ -5270,7 +5270,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/NearbyDriver} The populated <code>NearbyDriver</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('locations')) {
@@ -5336,7 +5336,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/NearbyDriversByRideType} The populated <code>NearbyDriversByRideType</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('ride_type')) {
@@ -5412,7 +5412,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/PassengerDetail} The populated <code>PassengerDetail</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
       UserDetail.constructFromObject(data, obj);
     }
@@ -5474,7 +5474,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/PickupDropoffLocation} The populated <code>PickupDropoffLocation</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
       Location.constructFromObject(data, obj);
       if (data.hasOwnProperty('time')) {
@@ -5548,7 +5548,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/PricingDetails} The populated <code>PricingDetails</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('base_charge')) {
@@ -5671,7 +5671,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/RatingRequest} The populated <code>RatingRequest</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('rating')) {
@@ -5761,7 +5761,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/Ride} The populated <code>Ride</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('ride_id')) {
@@ -5882,7 +5882,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/RideDetail} The populated <code>RideDetail</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('ride_id')) {
@@ -6083,19 +6083,19 @@ Emitter.prototype.hasListeners = function(event){
    * @enum {String}
    * @readonly
    */
-  exports.CanCancelEnum = { 
+  exports.CanCancelEnum = {
     /**
      * value: driver
      * @const
      */
     DRIVER: "driver",
-    
+
     /**
      * value: passenger
      * @const
      */
     PASSENGER: "passenger",
-    
+
     /**
      * value: dispatcher
      * @const
@@ -6151,7 +6151,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/RideLocation} The populated <code>RideLocation</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
       Location.constructFromObject(data, obj);
       if (data.hasOwnProperty('eta_seconds')) {
@@ -6224,7 +6224,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/RideReceipt} The populated <code>RideReceipt</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('ride_id')) {
@@ -6330,7 +6330,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/RideRequest} The populated <code>RideRequest</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('ride_id')) {
@@ -6436,7 +6436,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/RideRequestError} The populated <code>RideRequestError</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('error')) {
@@ -6545,7 +6545,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/RideStatusEnum} The populated <code>RideStatusEnum</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
     }
@@ -6605,7 +6605,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/RideType} The populated <code>RideType</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('ride_type')) {
@@ -6704,7 +6704,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/RideTypeEnum} The populated <code>RideTypeEnum</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
     }
@@ -6760,7 +6760,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/RideTypeEnumWithOther} The populated <code>RideTypeEnumWithOther</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
     }
@@ -6821,7 +6821,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/SandboxDriverAvailability} The populated <code>SandboxDriverAvailability</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('lat')) {
@@ -6909,7 +6909,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/SandboxPrimetime} The populated <code>SandboxPrimetime</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('lat')) {
@@ -6994,7 +6994,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/SandboxRideType} The populated <code>SandboxRideType</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('lat')) {
@@ -7078,7 +7078,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/SandboxRideUpdate} The populated <code>SandboxRideUpdate</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('ride_id')) {
@@ -7152,7 +7152,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/Tip} The populated <code>Tip</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('amount')) {
@@ -7226,7 +7226,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/TipParams} The populated <code>TipParams</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
       Tip.constructFromObject(data, obj);
     }
@@ -7288,7 +7288,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/UserDetail} The populated <code>UserDetail</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('first_name')) {
@@ -7375,7 +7375,7 @@ Emitter.prototype.hasListeners = function(event){
    * @return {module:model/VehicleDetail} The populated <code>VehicleDetail</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
-    if (data) { 
+    if (data) {
       obj = obj || new exports();
 
       if (data.hasOwnProperty('make')) {
@@ -7464,7 +7464,7 @@ Emitter.prototype.hasListeners = function(event){
  * TODO: combatible error handling?
  */
 
-module.exports = function(arr, fn, initial){  
+module.exports = function(arr, fn, initial){
   var idx = 0;
   var len = arr.length;
   var curr = arguments.length == 3
@@ -7474,7 +7474,7 @@ module.exports = function(arr, fn, initial){
   while (idx < len) {
     curr = fn.call(null, curr, arr[idx], ++idx, arr);
   }
-  
+
   return curr;
 };
 },{}],55:[function(require,module,exports){
@@ -8689,7 +8689,7 @@ var startLat = 1.2; // {Number} Latitude of the starting location
 
 var startLng = 1.2; // {Number} Longitude of the starting location
 
-var opts = { 
+var opts = {
   'rideType': "rideType_example", // {String} ID of a ride type
   'endLat': 1.2, // {Number} Latitude of the ending location
   'endLng': 1.2 // {Number} Longitude of the ending location
