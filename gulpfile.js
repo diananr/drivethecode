@@ -21,10 +21,11 @@ gulp.task('styles', function () {
     .pipe(stylus())
     .pipe(gulp.dest('./public/css'));
 })
-
-gulp.task('default', ['styles', 'webserver']);
-
 // watch the styles
 gulp.task('watch', function(){
-    gulp.watch('./src/*.styl', ['one']);
+    gulp.watch('./src/*.styl', ['styles']);
 })
+
+gulp.task('default', ['styles', 'webserver', 'watch']);
+
+
