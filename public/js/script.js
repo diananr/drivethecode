@@ -1,9 +1,34 @@
+var clientId = 'ydgWzNZ4qVrS';
+var clientSecret = '04gYKvHBfWi_HS7uuiERZqBiH9V_YWBd';
+
+var lati= localStorage.getItem("latitud");
+var lati1= localStorage.getItem("latitud1");
+var longi= localStorage.getItem("longitud");
+var longi1= localStorage.getItem("longitud1");
+
 var loadPag = function () {
 	if (navigator.geolocation){
 		navigator.geolocation.getCurrentPosition(good, error);
 	}
 	$("#estimate").click(showRoute);
 
+	$.ajax({
+		url: 'https://api.lyft.com/oauth/token',
+		type: 'POST',
+		data: {
+			grant_type: 'client_credentials',
+			scope: 'public'
+		},
+		beforeSend: function (xhr) {
+			xhr.setRequestHeader ("Authorization", "Basic " + btoa(clientId + ":" + clientSecret));
+		},
+		success: function(response) {
+			console.log(response);
+		},
+		error: function(error) {
+			console.log(error);
+		}
+	});
 	autocomplete();
 }
 
@@ -65,6 +90,48 @@ var showRoute = function(){
 		travelMode: google.maps.TravelMode.DRIVING
 	};
 
+	var geocoder = new google.maps.Geocoder();
+
+    //supresss initial a to b marker
+    directionsDisplay.setMap(map);
+    directionsDisplay.setOptions( { suppressMarkers: true } );
+
+    // geocoder  origin function , this convert the input.val to cordinates
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({"address": request.origin}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            latOr = results[0].geometry.location.lat();
+            longOr = results[0].geometry.location.lng();
+            origLatlon = new google.maps.LatLng(latOr, longOr);
+            console.log(latOr, longOr);
+            // change marker
+            var image = '../img/origin.png';
+            var marker = new google.maps.Marker({
+                position: origLatlon,
+                map: map,
+                icon: image
+            });
+        }
+    });
+
+    // geocoder  destination function , this convert the input.val to cordinates
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({"address": request.destination}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            latOr = results[0].geometry.location.lat();
+            longOr = results[0].geometry.location.lng();
+            origLatlon = new google.maps.LatLng(latOr, longOr);
+            console.log(latOr, longOr);
+            // change marker
+            var image = '../img/destination.png';
+            var marker = new google.maps.Marker({
+                position: origLatlon,
+                map: map,
+                icon: image
+            });
+        }
+    });
+
 	directionsDisplay.setMap(map);
 	directionsDisplay.setPanel(document.getElementById("route"));
 
@@ -73,13 +140,27 @@ var showRoute = function(){
 			directionsDisplay.setDirections(result);
   		}
 	});
+
+	geocodeAddress(geocoder, "startPoint", "latitud", "longitud");
+	geocodeAddress(geocoder, "endPoint",  "latitud1", "longitud1");
+
+	$.ajax({
+	    url: 'https://api.lyft.com/v1/cost?ride_type=lyft&start_lat='+lati+'&start_lng='+longi+'&end_lat='+lati1+'&end_lng='+longi1,
+	    type: 'GET',
+	    beforeSend: function(xhr) {
+             xhr.setRequestHeader("Authorization", "Bearer "+"gAAAAABXvLCVr6uY651QmKu_Pj2_trgqXSPe9AVJ9lldCe3vPjzUDBHXG19FXDZoWZ7_G3U_u01K4fuw3Lj7W6ml30v7jiuH4rlEfaxdqS9UiLhn2eiTkhezLF8Y66I3cpuF4b7UhXlS25Y5xbmPb6Qz5m9dllLJQBH11bxMe4o-Qh5mtAaEUVw=");
+        },
+	    success: function(response){
+	    	console.log(response);
+	    }
+	})
 }
 
 //show the predict
 var autocomplete = function() {
 	var defaultBounds = new google.maps.LatLngBounds(
 		new google.maps.LatLng(40.802089, -124.163751)
-		);
+	);
 
 	var origin_input = document.getElementById('startPoint');
 	var destination_input = document.getElementById('endPoint');
@@ -93,6 +174,7 @@ var autocomplete = function() {
 }
 
 
+<<<<<<< HEAD
 
 var addressValidator = require('address-validator');
 var Address = addressValidator.Address;
@@ -124,3 +206,12 @@ addressValidator.validate(address, addressValidator.match.streetAddress, functio
     var first = exact[0];
     console.log(first.streetNumber + ' '+ first.street);
 });
+=======
+var geocodeAddress= function(geocoder, valor, lat,lon) {
+  var address = document.getElementById(valor).value;
+  geocoder.geocode({'address': address}, function(results, status) {
+  	localStorage.setItem(lat, results[0].geometry.location.lat());
+  	localStorage.setItem(lon, results[0].geometry.location.lng());
+  });
+}
+>>>>>>> 9efb9ec6544b6d4aa98fe37cda6ac7bbd677ae17
