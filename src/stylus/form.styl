@@ -12,15 +12,26 @@
 .rate-container
     position absolute
     z-index 100
+    margin-top 12px
 .rate-form
     color #000
 .rate-form input
-    width 100%
+    width 90%
     border 2px solid transparent
+    float right
+    padding-bottom 10px
+.rate-form input#startPoint
+    border-bottom 1px solid #C6C6C6
 .rate-form input:focus
     outline 0px
 .rate-form .input-conector
     position absolute
+    top 59px
+    bottom 80px
+    left 15.5px
+    width 1px
+    background-color #C6C6C6
+
 .rate-form .input-conector:after, .rate-form .input-conector:before
     content ''
     position absolute
@@ -31,20 +42,22 @@
 .rate-form .input-conector:before
     bottom -3.5px;
     background-color mulberry;
-    border 1px solid mulberry;
+    border 3px solid mulberry;
 .rate-form .input-conector:after
-    top: 41.5px;
+    top: 1px;
     background-color: hot-pink;
-    border: 1px solid hot-pink;
+    border: 3px solid hot-pink;
 
 .header-txt
     background-color white
-    padding 7%
-    border-radius 10px
+    border-radius 8px
     box-shadow 0px 8px 6px -6px #CCCAC7;
     border 1px solid #CCCAC7
+    overflow auto
 .header-txt h1
     color hot-pink
     font-size 14px
-    margin-top 0px
+    margin-top 10px
     text-align center
+    padding-bottom 10px
+    border-bottom 1px solid #CCCAC7
