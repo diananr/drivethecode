@@ -153,7 +153,7 @@ var showRoute = function(){
 				xhr.setRequestHeader("Authorization", "bearer " + access_token);
 	        },
 			success: function(response){
-				console.log(response.cost_estimates[0]);
+				console.log(response);
 				localStorage.setItem("lyftPlus", response.cost_estimates[0].estimated_cost_cents_min + " - " + response.cost_estimates[0].estimated_cost_cents_max );
 				localStorage.setItem("lyftLine", response.cost_estimates[1].estimated_cost_cents_min + " - " + response.cost_estimates[1].estimated_cost_cents_max );
 				localStorage.setItem("lyft", response.cost_estimates[2].estimated_cost_cents_min + " - " + response.cost_estimates[2].estimated_cost_cents_max );
