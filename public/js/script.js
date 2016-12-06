@@ -29,6 +29,7 @@ var loadPag = function () {
 			console.log(error);
 		}
 	});
+	
 	autocomplete();
 }
 
@@ -155,8 +156,8 @@ var autocomplete = function() {
 		new google.maps.LatLng(40.802089, -124.163751)
 	);
 
-	var origin_input = document.getElementById('startPoint');
-	var destination_input = document.getElementById('endPoint');
+	var origin_input = document.getElementById("startPoint");
+	var destination_input = document.getElementById("endPoint");
 
 	var options = {
 		bounds: defaultBounds
@@ -165,7 +166,6 @@ var autocomplete = function() {
 	var autocomplete_origin = new google.maps.places.Autocomplete(origin_input, options);    
 	var autocomplete_destination = new google.maps.places.Autocomplete(destination_input, options);
 }
-
 
 var geocodeAddress= function(geocoder, valor, lat,lon) {
   var address = document.getElementById(valor).value;
