@@ -1,5 +1,5 @@
-var clientId = 'ydgWzNZ4qVrS';
-var clientSecret = '04gYKvHBfWi_HS7uuiERZqBiH9V_YWBd';
+var clientId = 'hu8yWg5fJYQ_';
+var clientSecret = 'vL8Xk8zs1RCLAeL7ZlsD-CSBsgHkbIoq';
 
 var start_lat= parseFloat(localStorage.getItem("latitud"));
 var start_lng= parseFloat(localStorage.getItem("longitud"));
@@ -16,6 +16,7 @@ var good= function(){
 	    center: {lat: -33.8688, lng: 151.2195},
 	    zoom: 13
 	  });
+	  var geocoder = new google.maps.Geocoder();
 
 	  var image1= "img/origin.png"
 	  var image2= "img/destination.png"
@@ -52,6 +53,7 @@ var good= function(){
 	    marker.setPosition(place.geometry.location);
 	    marker.setVisible(true);
 	    var address = '';
+	    geocodeAddress(geocoder, input, "latitud", "longitud");
 	  });
 
 	  var autocompleteDos = new google.maps.places.Autocomplete(inputDos);
@@ -74,7 +76,7 @@ var good= function(){
 	      map.fitBounds(place.geometry.viewport);
 	    } else {
 	      map.setCenter(place.geometry.location);
-	      map.setZoom(17);  // Why 17? Because it looks good.
+	      map.setZoom(14);  // Why 17? Because it looks good.
 	    }
 
 	    markerDos.setIcon(/** @type {google.maps.Icon} */({
@@ -83,6 +85,7 @@ var good= function(){
 	    );
 	    markerDos.setPosition(place.geometry.location);
 	    markerDos.setVisible(true)
+	    geocodeAddress(geocoder, inputDos, "latitud1", "longitud");
 	  });
 }
 
@@ -110,6 +113,7 @@ var loadPag = function () {
 	});
 
 	$("#startPoint").click(changePlaceholder);
+	$("#estimate").click(showRoute);
 }
 
 $(document).ready(loadPag);
@@ -120,10 +124,10 @@ var showRoute = function(){
 		$.ajax({
 			url: 'https://api.lyft.com/v1/cost',
 			data:{
-		    	start_lat : 37.7772,
-		    	start_lng : -122.4233,
-		    	end_lat : 37.7972,
-		    	end_lng : -122.4533
+		    	start_lat : start_lat,
+		    	start_lng : start_lng,
+		    	end_lat : end_lat,
+		    	end_lng : end_lng
 		    	//'https://api.lyft.com/v1/cost?start_lat=37.7772&start_lng=-122.4233&end_lat=37.7972&end_lng=-122.4533'
 		    },
 			beforeSend: function(xhr) {
@@ -152,7 +156,7 @@ var changePlaceholder = function (){
 }
 
 var geocodeAddress= function(geocoder, valor, lat,lon) {
-  var address = document.getElementById(valor).value;
+  var address = valor.value;
   geocoder.geocode({'address': address}, function(results, status) {
   	localStorage.setItem(lat, results[0].geometry.location.lat().toFixed(4));
   	localStorage.setItem(lon, results[0].geometry.location.lng().toFixed(4));
