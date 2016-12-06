@@ -72,7 +72,7 @@ var showRoute = function(){
 var autocomplete = function() {
 	var defaultBounds = new google.maps.LatLngBounds(
 		new google.maps.LatLng(40.802089, -124.163751)
-		);
+	);
 
 	var origin_input = document.getElementById('startPoint');
 	var destination_input = document.getElementById('endPoint');
@@ -84,3 +84,4 @@ var autocomplete = function() {
 	var autocomplete_origin = new google.maps.places.Autocomplete(origin_input, options);    
 	var autocomplete_destination = new google.maps.places.Autocomplete(destination_input, options);
 }
+
