@@ -30,6 +30,17 @@ var good = function(pos){
 	   	}
     };
     
+    var marker = new google.maps.Marker({
+        position: latlon,
+        map: map,
+        title: 'PEPSized Coffee',
+        icon: {
+            url: "images/markers/svg/Coffee_3.svg",
+            scaledSize: new google.maps.Size(64, 64)
+        }
+    });
+
+    
     var map = new google.maps.Map(document.getElementById("map"), myOptions);
 }
 var error = function(error){
@@ -84,3 +95,5 @@ var autocomplete = function() {
 	var autocomplete_origin = new google.maps.places.Autocomplete(origin_input, options);    
 	var autocomplete_destination = new google.maps.places.Autocomplete(destination_input, options);
 }
+
+////////////
