@@ -68,6 +68,7 @@ var error = function(error){
 //show route
 var showRoute = function(){
 	if($("#startPoint").val().trim().length > 0 && $("#endPoint").val().trim().length > 0){
+		console.log(typeof start_lat, start_lat);
 		var directionsDisplay = new google.maps.DirectionsRenderer({
 			polylineOptions: {
 	      		strokeColor: "#9194a1"
@@ -143,10 +144,10 @@ var showRoute = function(){
 		$.ajax({
 			url: 'https://api.lyft.com/v1/cost',
 			data:{
-		    	start_lat : start_lat,
-		    	start_lng : start_lng,
-		    	end_lat : end_lat,
-		    	end_lng : end_lng
+		    	start_lat : 37.7772,
+		    	start_lng : -122.4233,
+		    	end_lat : 37.7972,
+		    	end_lng : -122.4533
 		    	//'https://api.lyft.com/v1/cost?start_lat=37.7772&start_lng=-122.4233&end_lat=37.7972&end_lng=-122.4533'
 		    },
 			beforeSend: function(xhr) {
@@ -154,11 +155,18 @@ var showRoute = function(){
 	        },
 			success: function(response){
 				console.log(response);
-		    },
+				localStorage.setItem("lyftPlus", response.cost_estimates[0].estimated_cost_cents_min + " - " + response.cost_estimates[0].estimated_cost_cents_max );
+				localStorage.setItem("lyftLine", response.cost_estimates[1].estimated_cost_cents_min + " - " + response.cost_estimates[1].estimated_cost_cents_max );
+				localStorage.setItem("lyft", response.cost_estimates[2].estimated_cost_cents_min + " - " + response.cost_estimates[2].estimated_cost_cents_max );
+		    },	
 		    error: function(error){
 		    	console.log(error);
 		    }
-		});
+		})
+
+		$("#lyftPlus").html(localStorage.getItem("lyftPlus"));
+		$("#lyftLine").html(localStorage.getItem("lyftLine"));
+		$("#lyft").html(localStorage.getItem("lyft"));
 	}
 }
 
