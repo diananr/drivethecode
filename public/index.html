@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="utf-8">
     <title></title>
@@ -9,7 +8,6 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
 </head>
-
 <body>
     <header>
         <!--MENU DESPLEGABLE-->
@@ -67,70 +65,6 @@
                     <div class="header-txt">
                         <h1 class="no-line">AVAILABLE RIDE TYPES</h1>
                         <div class="rate-form">
-                           <div class="row">
-                               <div class="car-item">
-                                   <div class="col-md-4">
-                                       <img src="img/line-car.png" alt="">
-                                   </div>
-                                   <div class="col-md-4">
-                                       <p class="first-txt">Line</p>
-                                       <p class="detail">Shared, 2 riders max</p>
-                                   </div>
-                                   <div class="col-md-4">
-                                       <p class="rate">
-                                           $4-6
-                                       </p>
-                                   </div>
-                               </div>
-                           </div>
-                           <div class="row">
-                               <div class="car-item">
-                                  <div class="col-md-4">
-                                      <img src="img/lyft-car.png" alt="">
-                                  </div>
-                                  <div class="col-md-4">
-                                      <p class="first-txt">Lyft</p>
-                                      <p class="detail">4 seats</p>
-                                  </div>
-                                  <div class="col-md-4">
-                                      <p class="rate">
-                                          $4-6
-                                      </p>
-                                  </div>
-                               </div>
-                           </div>
-                           <div class="row">
-                               <div class="car-item">
-                                  <div class="col-md-4">
-                                      <img src="img/plus-car.png" alt="">
-                                  </div>
-                                  <div class="col-md-4">
-                                      <p class="first-txt">Plus</p>
-                                      <p class="detail">6 seats</p>
-                                  </div>
-                                  <div class="col-md-4">
-                                      <p class="rate">
-                                          $4-6
-                                      </p>
-                                  </div>
-                               </div>
-                           </div>
-                           <div class="row">
-                               <div class="car-item">
-                                  <div class="col-md-4">
-                                      <img src="img/plus-car.png" alt="">
-                                  </div>
-                                  <div class="col-md-4">
-                                      <p class="first-txt">Premier</p>
-                                      <p class="detail">High-end, 4 seats</p>
-                                  </div>
-                                  <div class="col-md-4">
-                                      <p class="rate">
-                                          $4-6
-                                      </p>
-                                  </div>
-                               </div>
-                           </div>
                             <div class="row">
                                 <div class="car-item" data-toggle="modal" data-target=".bs-example-modal-sm" id="line">
                                     <div class="col-md-4">
@@ -186,7 +120,6 @@
             </div>
         </div>
     </div>
-
     <div class="container">
         <!-- Modal line -->
         <div class="modal fade" id="myModal-line" role="dialog">
@@ -195,7 +128,29 @@
                 <div class="modal-content">
                     <div>
                         <div class="hot-pink">
-                            <p>A personal for when you need to get to your destination fast. Fits up to 4 people.</p>
+                            <p class="title-card">Lyft Line</p>
+                            <img src="img/modal-line.png" alt="">
+                        </div>
+                        <div class="light">
+                        <p class="bold">
+                            Smartly routed
+                        </p>
+                        <p>Lyft Line matches you with others travelling the same way</p>
+                        <p class="bold">Fixed trip price</p>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!-- Modal lyft -->
+        <div class="modal fade" id="myModal-lyft" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div>
+                        <div class="hot-pink">
+                            <p class="title-card">A personal for when you need to get to your destination fast. Fits up to 4 people.</p>
                         </div>
                         <div class="light">
                             <p>Seats</p>
@@ -210,14 +165,15 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
-        <!-- Modal lyft -->
-        <div class="modal fade" id="myModal-lyft" role="dialog">
+        <!-- Modal plus -->
+        <div class="modal fade" id="myModal-plus" role="dialog">
             <div class="modal-dialog">
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div>
                         <div class="hot-pink">
-                            <p>A personal for when you need to get to your destination fast. Fits up to 4 people.</p>
+                            <p class="title-card">Lyft Plus</p>
+                            <img src="img/modal-plus.png" alt="">
                         </div>
                         <div class="light">
                             <p>Seats</p>
@@ -229,25 +185,6 @@
                         <p>$1.75 Service fee added to all rides</p>
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- Modal plus -->
-        <div class="modal fade" id="myModal-plus" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Modal Header</h4>
-                    </div>
-                    <div class="modal-body">
-                        <p>Some text in the modal.</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
