@@ -30,7 +30,10 @@ var loadPag = function () {
 			console.log(error);
 		}
 	});
+	
 	autocomplete();
+
+	$("#startPoint").click(changePlaceholder);
 }
 
 $(document).ready(loadPag);
@@ -57,8 +60,6 @@ var good = function(pos){
     };
     
     var map = new google.maps.Map(document.getElementById("map"), myOptions);
-
-
 }
 var error = function(error){
 	console.log(error);
@@ -167,8 +168,8 @@ var autocomplete = function() {
 		new google.maps.LatLng(40.802089, -124.163751)
 		);
 
-	var origin_input = document.getElementById('startPoint');
-	var destination_input = document.getElementById('endPoint');
+	var origin_input = document.getElementById("startPoint");
+	var destination_input = document.getElementById("endPoint");
 
 	var options = {
 		bounds: defaultBounds
@@ -178,6 +179,10 @@ var autocomplete = function() {
 	var autocomplete_destination = new google.maps.places.Autocomplete(destination_input, options);
 }
 
+//changePlaceholder
+var changePlaceholder = function (){
+	$(this).attr("placeholder", "Search address or location");
+}
 
 var geocodeAddress= function(geocoder, valor, lat,lon) {
   var address = document.getElementById(valor).value;
