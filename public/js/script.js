@@ -3,6 +3,8 @@ var loadPag = function () {
 		navigator.geolocation.getCurrentPosition(good, error);
 	}
 	$("#estimate").click(showRoute);
+
+	initialize();
 }
 
 $(document).ready(loadPag);
@@ -41,7 +43,6 @@ var showRoute = function(){
 
 	var mapOptions = {
 		zoom: 5,
-		center: new google.maps.LatLng(40.674389,-4.700432),
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 
@@ -61,4 +62,21 @@ var showRoute = function(){
 			directionsDisplay.setDirections(result);
   		}
 	});
+}
+
+//show the predict
+var initialize = function() {
+	var defaultBounds = new google.maps.LatLngBounds(
+		new google.maps.LatLng(40.802089, -124.163751)
+		);
+
+	var origin_input = document.getElementById('startPoint');
+	var destination_input = document.getElementById('endPoint');
+
+	var options = {
+		bounds: defaultBounds
+	};
+
+	var autocomplete_origin = new google.maps.places.Autocomplete(origin_input, options);    
+	var autocomplete_destination = new google.maps.places.Autocomplete(destination_input, options);
 }
