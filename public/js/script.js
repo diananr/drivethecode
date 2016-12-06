@@ -30,6 +30,7 @@ var loadPag = function () {
 			console.log(error);
 		}
 	});
+	autocomplete();
 }
 
 $(document).ready(loadPag);
@@ -56,6 +57,8 @@ var good = function(pos){
     };
     
     var map = new google.maps.Map(document.getElementById("map"), myOptions);
+
+
 }
 var error = function(error){
 	console.log(error);
@@ -63,7 +66,11 @@ var error = function(error){
 
 //show route
 var showRoute = function(){
-	var directionsDisplay = new google.maps.DirectionsRenderer();
+	var directionsDisplay = new google.maps.DirectionsRenderer({
+		polylineOptions: {
+      		strokeColor: "#9194a1"
+    	}
+	});
 	var directionsService = new google.maps.DirectionsService();
 
 	var mapOptions = {
@@ -80,6 +87,46 @@ var showRoute = function(){
 	};
 
 	var geocoder = new google.maps.Geocoder();
+
+    //supresss initial a to b marker
+    directionsDisplay.setMap(map);
+    directionsDisplay.setOptions( { suppressMarkers: true } );
+
+    // geocoder  origin function , this convert the input.val to cordinates
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({"address": request.origin}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            latOr = results[0].geometry.location.lat();
+            longOr = results[0].geometry.location.lng();
+            origLatlon = new google.maps.LatLng(latOr, longOr);
+            console.log(latOr, longOr);
+            // change marker
+            var image = '../img/origin.png';
+            var marker = new google.maps.Marker({
+                position: origLatlon,
+                map: map,
+                icon: image
+            });
+        }
+    });
+
+    // geocoder  destination function , this convert the input.val to cordinates
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({"address": request.destination}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+            latOr = results[0].geometry.location.lat();
+            longOr = results[0].geometry.location.lng();
+            origLatlon = new google.maps.LatLng(latOr, longOr);
+            console.log(latOr, longOr);
+            // change marker
+            var image = '../img/destination.png';
+            var marker = new google.maps.Marker({
+                position: origLatlon,
+                map: map,
+                icon: image
+            });
+        }
+    });
 
 	directionsDisplay.setMap(map);
 	directionsDisplay.setPanel(document.getElementById("route"));
@@ -106,7 +153,7 @@ var showRoute = function(){
 }
 
 //show the predict
-var initialize = function() {
+var autocomplete = function() {
 	var defaultBounds = new google.maps.LatLngBounds(
 		new google.maps.LatLng(40.802089, -124.163751)
 		);
