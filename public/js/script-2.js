@@ -12,6 +12,17 @@ $("#endPoint").on('click', function(){
     $(".cars").hide("slow");
 })
 
+
 $(".car-item").click(function(){
 	$("#blur").addClass("blur");
 })
+
+$("#line").click(function(){
+    $("#myModal-line").modal();
+});
+$("#lyft").click(function(){
+    $("#myModal-lyft").modal();
+});
+$("#plus").click(function(){
+    $("#myModal-plus").modal();
+});
