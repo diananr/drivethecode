@@ -60,7 +60,7 @@ var good = function(pos){
     
     var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png';
       var marker = new google.maps.Marker({
-        position: loatlon,
+        position: latlon,
         map: map,
         icon: iconBase 
     });
