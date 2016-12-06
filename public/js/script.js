@@ -12,7 +12,6 @@ var loadPag = function () {
 	}
 	$("#estimate").click(showRoute);
 
-	initialize();
 	$.ajax({
 		url: 'https://api.lyft.com/oauth/token',
 		type: 'POST',
@@ -57,8 +56,6 @@ var good = function(pos){
     };
     
     var map = new google.maps.Map(document.getElementById("map"), myOptions);
-
-
 }
 var error = function(error){
 	console.log(error);
@@ -156,7 +153,7 @@ var showRoute = function(){
 var autocomplete = function() {
 	var defaultBounds = new google.maps.LatLngBounds(
 		new google.maps.LatLng(40.802089, -124.163751)
-		);
+	);
 
 	var origin_input = document.getElementById('startPoint');
 	var destination_input = document.getElementById('endPoint');
