@@ -31,6 +31,8 @@ var loadPag = function () {
 	});
 	
 	autocomplete();
+
+	$("#startPoint").click(changePlaceholder);
 }
 
 $(document).ready(loadPag);
@@ -57,13 +59,6 @@ var good = function(pos){
     };
     
     var map = new google.maps.Map(document.getElementById("map"), myOptions);
-    
-    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/parking_lot_maps.png';
-      var marker = new google.maps.Marker({
-        position: latlon,
-        map: map,
-        icon: iconBase 
-    });
 }
 var error = function(error){
 	console.log(error);
@@ -172,6 +167,11 @@ var autocomplete = function() {
 
 	var autocomplete_origin = new google.maps.places.Autocomplete(origin_input, options);    
 	var autocomplete_destination = new google.maps.places.Autocomplete(destination_input, options);
+}
+
+//changePlaceholder
+var changePlaceholder = function (){
+	$(this).attr("placeholder", "Search address or location");
 }
 
 var geocodeAddress= function(geocoder, valor, lat,lon) {
