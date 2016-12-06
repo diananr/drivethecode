@@ -4,7 +4,7 @@ var loadPag = function () {
 	}
 	$("#estimate").click(showRoute);
 
-	initialize();
+	autocomplete();
 }
 
 $(document).ready(loadPag);
@@ -38,7 +38,11 @@ var error = function(error){
 
 //show route
 var showRoute = function(){
-	var directionsDisplay = new google.maps.DirectionsRenderer();
+	var directionsDisplay = new google.maps.DirectionsRenderer({
+		polylineOptions: {
+      		strokeColor: "#9194a1"
+    	}
+	});
 	var directionsService = new google.maps.DirectionsService();
 
 	var mapOptions = {
@@ -65,7 +69,7 @@ var showRoute = function(){
 }
 
 //show the predict
-var initialize = function() {
+var autocomplete = function() {
 	var defaultBounds = new google.maps.LatLngBounds(
 		new google.maps.LatLng(40.802089, -124.163751)
 		);
