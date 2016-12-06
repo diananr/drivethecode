@@ -23,3 +23,8 @@ gulp.task('styles', function () {
 })
 
 gulp.task('default', ['styles', 'webserver']);
+
+// watch the styles
+gulp.task('watch', function(){
+    gulp.watch('./src/*.styl', ['one']);
+})
