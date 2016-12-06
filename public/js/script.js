@@ -31,7 +31,7 @@ var loadPag = function () {
 		}
 	});
 	
-	autocomplete();
+	autocompleteInput();
 
 	$("#startPoint").click(changePlaceholder);
 }
@@ -163,7 +163,7 @@ var showRoute = function(){
 }
 
 //show the predict
-var autocomplete = function() {
+var autocompleteInput = function() {
 	var defaultBounds = new google.maps.LatLngBounds(
 		new google.maps.LatLng(40.802089, -124.163751)
 		);
