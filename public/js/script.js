@@ -77,7 +77,7 @@ var showRoute = function(){
 		var directionsService = new google.maps.DirectionsService();
 
 		var mapOptions = {
-			zoom: 5,
+			zoom: 2,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
 
