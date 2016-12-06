@@ -31,8 +31,6 @@ var good = function(pos){
     };
     
     var map = new google.maps.Map(document.getElementById("map"), myOptions);
-
-
 }
 var error = function(error){
 	console.log(error);
@@ -99,7 +97,6 @@ var showRoute = function(){
             });
         }
     });
-
 
 	directionsDisplay.setMap(map);
 	directionsDisplay.setPanel(document.getElementById("route"));
