@@ -3,8 +3,9 @@ $("#estimate").on('click', function(){
 
 })
 $("#startPoint").on('click', function(){
-     $(".cars").hide("slow");
- })
-$("#endPoint").on('click', function(){
+    $(".cars").hide("slow");
+    $("input").val("");
+})
+$("endPoint").on('click', function(){
     $(".cars").hide("slow");
 })
